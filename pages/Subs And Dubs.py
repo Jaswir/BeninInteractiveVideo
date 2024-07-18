@@ -1,5 +1,4 @@
 import streamlit as st
-from pytube import YouTube
 from openai import OpenAI
 from os import environ
 import get_youtube_audio

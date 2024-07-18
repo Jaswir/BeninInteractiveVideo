@@ -1,4 +1,4 @@
-from pytube import YouTube
+from pytubefix import YouTube
 from openai import OpenAI
 from os import environ
 import vectara
@@ -7,6 +7,17 @@ import streamlit as st
 
 OpenAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key=OpenAI_API_KEY)
+
+from pytube.innertube import _default_clients
+from pytube import cipher
+import re
+
+_default_clients["ANDROID"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["IOS"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["ANDROID_EMBED"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["IOS_EMBED"]["context"]["client"]["clientVersion"] = "19.08.35"
+_default_clients["IOS_MUSIC"]["context"]["client"]["clientVersion"] = "6.41"
+_default_clients["ANDROID_MUSIC"] = _default_clients["ANDROID_CREATOR"]
 
 
 def prepForVectara():
@@ -44,7 +55,12 @@ def get_english_transcription_from_english_youtube(url, language):
 
     # Write transcription to file
     with open("video_transcription.txt", "w", encoding="utf-8") as file:
-        file.write(yoruba_transcription)
+        if language == "English":
+            file.write(english_transcription)
+        elif language == "Yoruba":
+            file.write(yoruba_transcription)
+        elif language == "French":
+            file.write(french_transcription)
 
     print("Text has been written to video_transcription.txt")
 

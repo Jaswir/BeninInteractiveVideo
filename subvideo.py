@@ -1,4 +1,4 @@
-from pytube import YouTube
+from pytubefix import YouTube
 from openai import OpenAI
 from os import environ
 import streamlit as st

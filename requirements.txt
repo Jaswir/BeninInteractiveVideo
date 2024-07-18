@@ -22,3 +22,4 @@ pysrt
 ffmpeg-python
 pydub
 moviepy
+pytubefix

@@ -6,7 +6,8 @@ st.title("Welcome To Ben Interactive Video 📺")
 
 st.divider()
 
-st.write("""Introducing Ben Interactive Video: Video Interaction for Benin and Beyond. Interact with videos in your preferred language, Ask Questions about the Video, Subtitles and Dubbing 🎥.
+st.write("""Introducing Ben Interactive Video:  
+Video Interaction for Benin and Beyond. Interact with videos in your preferred language, Ask Questions about the Video, Subtitles and Dubbing 🎥.
 """)
 
 st.subheader("Features")
